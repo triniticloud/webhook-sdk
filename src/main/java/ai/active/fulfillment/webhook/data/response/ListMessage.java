@@ -19,6 +19,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ListMessage extends AbstractMessage {
   private static final long serialVersionUID = 216963375915855841L;
+  
+  protected static final String TYPE = "list";
+  
   @JsonProperty("content")
   private ListContent content;
 

@@ -22,6 +22,9 @@ import java.io.Serializable;
 public class VideoMessage extends AbstractMessage implements Serializable {
 
   private static final long serialVersionUID = 8606241681808842990L;
+  
+  protected static final String TYPE = "video";
+  
   @JsonProperty("content")
   private Content content;
 

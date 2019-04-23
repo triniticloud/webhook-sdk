@@ -29,14 +29,15 @@ import java.util.List;
     defaultImpl = HookMessage.class
 )
 @JsonSubTypes({
-    @JsonSubTypes.Type(value = TextMessage.class, name = "text"),
-    @JsonSubTypes.Type(value = ListMessage.class, name = "list"),
-    @JsonSubTypes.Type(value = ButtonMessage.class, name = "button"),
-    @JsonSubTypes.Type(value = CarouselMessage.class, name = "carousel"),
-    @JsonSubTypes.Type(value = ImageMessage.class, name = "image"),
-    @JsonSubTypes.Type(value = VideoMessage.class, name = "video"),
-    @JsonSubTypes.Type(value = CustomMessage.class, name = "custom"),
-    @JsonSubTypes.Type(value = MarkupMessage.class, name = "markup")
+    @JsonSubTypes.Type(value = TextMessage.class, name = TextMessage.TYPE),
+    @JsonSubTypes.Type(value = ListMessage.class, name = ListMessage.TYPE),
+    @JsonSubTypes.Type(value = ButtonMessage.class, name = ButtonMessage.TYPE),
+    @JsonSubTypes.Type(value = CarouselMessage.class, name = CarouselMessage.TYPE),
+    @JsonSubTypes.Type(value = ImageMessage.class, name = ImageMessage.TYPE),
+    @JsonSubTypes.Type(value = VideoMessage.class, name = VideoMessage.TYPE),
+    @JsonSubTypes.Type(value = CustomMessage.class, name = CustomMessage.TYPE),
+    @JsonSubTypes.Type(value = MarkupMessage.class, name = MarkupMessage.TYPE),
+    @JsonSubTypes.Type(value = DynamicMessage.class, name = DynamicMessage.TYPE)
 })
 // @formatter:on
 public abstract class AbstractMessage implements Serializable {

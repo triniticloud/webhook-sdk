@@ -29,6 +29,9 @@ import java.io.Serializable;
 public class MarkupMessage extends AbstractMessage implements Serializable {
 
   private static final long serialVersionUID = 2809781085766744287L;
+  
+  protected static final String TYPE = "markup";
+  
   @JsonProperty("content")
   private Content content;
 

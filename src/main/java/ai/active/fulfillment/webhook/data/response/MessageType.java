@@ -20,7 +20,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 public enum MessageType {
-  TEXT("text"), LIST("list"), BUTTON("button"), CAROUSEL("carousel"), IMAGE("image"), VIDEO("video"), CUSTOM("custom"), MARKUP("markup");
+  TEXT(TextMessage.TYPE), LIST(ListMessage.TYPE), BUTTON(ButtonMessage.TYPE), CAROUSEL(CarouselMessage.TYPE), IMAGE(
+      ImageMessage.TYPE), VIDEO(VideoMessage.TYPE), CUSTOM(CustomMessage.TYPE), MARKUP(MarkupMessage.TYPE), DYNAMIC(DynamicMessage.TYPE);
 
   private static final Map<String, MessageType> CONSTANTS = new HashMap<>();
 
@@ -41,8 +42,7 @@ public enum MessageType {
     MessageType constant = CONSTANTS.get(value);
     if (constant == null) {
       throw new IllegalArgumentException(value);
-    }
-    else {
+    } else {
       return constant;
     }
   }
@@ -53,7 +53,7 @@ public enum MessageType {
   }
 
   @JsonValue
-  public String value() {
+  public final String value() {
     return this.value;
   }
 }

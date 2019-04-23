@@ -23,6 +23,8 @@ public class ImageMessage extends AbstractMessage implements Serializable {
 
   private static final long serialVersionUID = 6224513910639829674L;
   
+  protected static final String TYPE = "image";
+  
   @JsonProperty("content")
   private Content content;
 

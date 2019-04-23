@@ -25,6 +25,8 @@ public class CarouselMessage extends AbstractMessage implements Serializable {
 
   private static final long serialVersionUID = 8125746124348212739L;
   
+  protected static final String TYPE = "carousel";
+  
   @JsonProperty("content")
   private List<Content> content = null;
 

@@ -4,10 +4,12 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class TextMessage extends AbstractMessage{
+public class TextMessage extends AbstractMessage {
 
   private static final long serialVersionUID = -319802185150685079L;
-  
+
+  protected static final String TYPE = "text";
+
   @JsonProperty("content")
   private String content;
 

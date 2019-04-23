@@ -20,10 +20,13 @@ import java.io.Serializable;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ButtonMessage extends AbstractMessage implements Serializable {
+
+  private static final long serialVersionUID = 5610150626917294732L;
+
+  protected static final String TYPE = "button";
+
   @JsonProperty("content")
   private Content content;
-
-  private final static long serialVersionUID = 5610150626917294732L;
 
   @JsonProperty("content")
   public Content getContent() {

@@ -26,6 +26,8 @@ public class CustomMessage extends AbstractMessage  implements Serializable {
 
   private static final long serialVersionUID = -4906337297706130771L;
   
+  protected static final String TYPE = "custom";
+  
   @JsonProperty("content")
   private Content content;
 

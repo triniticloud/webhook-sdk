@@ -29,6 +29,10 @@ public class User implements Serializable {
   private String id;
   @JsonProperty("channel_id")
   private String channelId;
+  @JsonProperty("logged_id")
+  private boolean loggedIn;
+  @JsonProperty("access_token")
+  private String accessToken;
   @JsonProperty("profile")
   private Profile profile;
 
@@ -52,17 +56,33 @@ public class User implements Serializable {
     this.profile = profile;
   }
 
-  @Override
-  public String toString() {
-    return new ToStringBuilder(this).append("id", id).append("profile", profile).toString();
-  }
-
   public String getChannelId() {
     return channelId;
   }
 
   public void setChannelId(String channelId) {
     this.channelId = channelId;
+  }
+  
+  public String getAccessToken() {
+    return accessToken;
+  }
+
+  public void setAccessToken(String accessToken) {
+    this.accessToken = accessToken;
+  }
+
+  public boolean isLoggedIn() {
+    return loggedIn;
+  }
+
+  public void setLoggedIn(boolean loggedIn) {
+    this.loggedIn = loggedIn;
+  }
+  
+  @Override
+  public String toString() {
+    return new ToStringBuilder(this).append("id", id).append("profile", profile).toString();
   }
 
 }
