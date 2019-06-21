@@ -13,16 +13,20 @@
  */
 package ai.active.fulfillment.webhook.data.response;
 
+import java.io.Serializable;
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
-
-import java.io.Serializable;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({"list", "buttons"})
 public class ListContent implements Serializable {
   private static final long serialVersionUID = -1759045313387280359L;
+
+  @JsonProperty("style")
+  private ListStyle style;
+
   @JsonProperty("list")
   private java.util.List<Content> list = null;
   @JsonProperty("buttons")
@@ -47,4 +51,15 @@ public class ListContent implements Serializable {
   public void setButtons(java.util.List<Object> buttons) {
     this.buttons = buttons;
   }
+
+  @JsonProperty("style")
+  public ListStyle getStyle() {
+    return style;
+  }
+
+  @JsonProperty("style")
+  public void setStyle(ListStyle style) {
+    this.style = style;
+  }
+
 }
