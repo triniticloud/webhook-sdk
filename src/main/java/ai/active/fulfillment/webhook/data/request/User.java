@@ -31,6 +31,8 @@ public class User implements Serializable {
   private String channelId;
   @JsonProperty("logged_id")
   private boolean loggedIn;
+  @JsonProperty("customer_id")
+  private String customerId;
   @JsonProperty("access_token")
   private String accessToken;
   @JsonProperty("profile")
@@ -63,7 +65,7 @@ public class User implements Serializable {
   public void setChannelId(String channelId) {
     this.channelId = channelId;
   }
-  
+
   public String getAccessToken() {
     return accessToken;
   }
@@ -79,7 +81,15 @@ public class User implements Serializable {
   public void setLoggedIn(boolean loggedIn) {
     this.loggedIn = loggedIn;
   }
-  
+
+  public String getCustomerId() {
+    return customerId;
+  }
+
+  public void setCustomerId(String customerId) {
+    this.customerId = customerId;
+  }
+
   @Override
   public String toString() {
     return new ToStringBuilder(this).append("id", id).append("profile", profile).toString();
