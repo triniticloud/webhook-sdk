@@ -37,6 +37,8 @@ public class User implements Serializable {
   private String accessToken;
   @JsonProperty("profile")
   private Profile profile;
+  @JsonProperty("custSeg")
+  private String custSeg;
 
   @JsonProperty("id")
   public String getId() {
@@ -93,6 +95,14 @@ public class User implements Serializable {
   @Override
   public String toString() {
     return new ToStringBuilder(this).append("id", id).append("profile", profile).toString();
+  }
+
+  public String getCustSeg() {
+    return custSeg;
+  }
+
+  public void setCustSeg(String custSeg) {
+    this.custSeg = custSeg;
   }
 
 }

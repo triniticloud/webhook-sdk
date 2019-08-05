@@ -14,16 +14,17 @@
 package ai.active.fulfillment.webhook.data.request;
 
 import java.io.Serializable;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
+import com.fasterxml.jackson.annotation.JsonAnyGetter;
+import com.fasterxml.jackson.annotation.JsonAnySetter;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
-@JsonPropertyOrder({
-
-})
 public class Request implements Serializable {
 
   private static final long serialVersionUID = 718818345247810591L;
@@ -33,6 +34,9 @@ public class Request implements Serializable {
   private String text;
 
   private String payload;
+  
+  @JsonIgnore
+  private Map<String, Object> additionalProperties = new HashMap<>();
 
   public String getType() {
     return type;
@@ -56,6 +60,16 @@ public class Request implements Serializable {
 
   public void setPayload(String payload) {
     this.payload = payload;
+  }
+  
+  @JsonAnyGetter
+  public Map<String, Object> getAdditionalProperties() {
+    return this.additionalProperties;
+  }
+
+  @JsonAnySetter
+  public void setAdditionalProperty(String name, Object value) {
+    this.additionalProperties.put(name, value);
   }
 
   @Override
