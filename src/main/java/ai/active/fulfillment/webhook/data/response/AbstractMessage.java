@@ -50,6 +50,9 @@ public abstract class AbstractMessage implements Serializable {
   @JsonProperty("quick_replies")
   private List<QuickReply> quickReplies = null;
 
+  @JsonProperty("speechResponse")
+  private String speechResponse;
+
   @JsonProperty("type")
   public String getType() {
     return type;
@@ -68,6 +71,16 @@ public abstract class AbstractMessage implements Serializable {
   @JsonProperty("quick_replies")
   public void setQuickReplies(List<QuickReply> quickReplies) {
     this.quickReplies = quickReplies;
+  }
+
+  @JsonProperty("speechResponse")
+  public String getSpeechResponse() {
+    return speechResponse;
+  }
+
+  @JsonProperty("speechResponse")
+  public void setSpeechResponse(String speechResponse) {
+    this.speechResponse = speechResponse;
   }
 
   public abstract Object getContent();
