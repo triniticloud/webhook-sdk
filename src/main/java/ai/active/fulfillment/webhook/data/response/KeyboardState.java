@@ -20,7 +20,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public enum KeyboardState {
-  ALPHA("ALPHA"), NUM("NUM"), NONE("NONE"), HIDE("HIDE"), PWD("PWD"), TEXT("text");
+  ALPHA("ALPHA"), NUM("NUM"), NONE("NONE"), HIDE("HIDE"), PWD("PWD"), TEXT("TEXT"), DISABLE("DISABLE");
 
   private static final Map<String, KeyboardState> CONSTANTS = new HashMap<>();
 
