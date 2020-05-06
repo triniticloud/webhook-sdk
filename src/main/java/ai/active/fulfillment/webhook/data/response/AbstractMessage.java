@@ -53,6 +53,9 @@ public abstract class AbstractMessage implements Serializable {
   @JsonProperty("speechResponse")
   private String speechResponse;
 
+  @JsonProperty("customTemplateName")
+  private String customTemplateName;
+
   @JsonProperty("type")
   public String getType() {
     return type;
@@ -82,6 +85,12 @@ public abstract class AbstractMessage implements Serializable {
   public void setSpeechResponse(String speechResponse) {
     this.speechResponse = speechResponse;
   }
+
+  @JsonProperty("customTemplateName")
+  public String getCustomTemplateName() { return customTemplateName; }
+
+  @JsonProperty("customTemplateName")
+  public void setCustomTemplateName(String customTemplateName) { this.customTemplateName = customTemplateName; }
 
   public abstract Object getContent();
 }
