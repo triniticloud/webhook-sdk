@@ -20,15 +20,17 @@ jobs:
     
     - name: Configure GPG Key
       run: |
+       export GPG_TTY=$(tty) 
        mkdir -p ~/.gnupg/
        printf "$GPG_PRIVATE_KEY" | base64 --decode > ~/.gnupg/private.key
        gpg --batch --import ~/.gnupg/private.key
-       export GPG_TTY=$(tty)
       env:
        GPG_PRIVATE_KEY: ${{ secrets.GPG_PRIVATE_KEY }}      
 
     - name: Publish to Apache Maven Central
-      run: mvn deploy -P release
+      run: |
+        export GPG_TTY=$(tty)
+        mvn deploy -P release
       env:
         MAVEN_USERNAME: ${{ secrets.MAVEN_CENTRAL_USERNAME }}
         MAVEN_CENTRAL_TOKEN: ${{ secrets.MAVEN_CENTRAL_TOKEN }}
