@@ -188,4 +188,6 @@ buildNumber.properties
 .idea/
 webhook-sdk.iml
 
+.vscode
+
 

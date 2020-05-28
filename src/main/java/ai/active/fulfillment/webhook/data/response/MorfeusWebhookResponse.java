@@ -23,7 +23,7 @@ import java.util.List;
 import java.util.Map;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
-@JsonPropertyOrder({"messages", "render", "keyboard_state", "status", "expected_entities", "extra_data", "audit", "headers"})
+@JsonPropertyOrder({"messages", "render", "keyboard_state", "status", "expected_entities", "extra_data", "audit", "headers", "customerId"})
 public class MorfeusWebhookResponse implements Serializable {
 
   private static final long serialVersionUID = -5495533712195902428L;
@@ -43,6 +43,8 @@ public class MorfeusWebhookResponse implements Serializable {
   private Audit audit;
   @JsonProperty("headers")
   private Map<String, String> headers;
+  @JsonProperty("customerId")
+  private String customerId;
 
   @JsonProperty("messages")
   public List<AbstractMessage> getMessages() {
@@ -124,8 +126,18 @@ public class MorfeusWebhookResponse implements Serializable {
     this.headers = headers;
   }
 
+  @JsonProperty("customerId")
+  public String getCustomerId() {
+    return customerId;
+  }
+
+  @JsonProperty("customerId")
+  public void setCustomerId(String customerId) {
+    this.customerId = customerId;
+  }
+
   public MorfeusWebhookResponse(List<AbstractMessage> messages, String render, String keyboardState, Status status,
-      List<String> expectedEntities, Map<String, Object> extraData, Audit audit, Map<String, String> headers) {
+      List<String> expectedEntities, Map<String, Object> extraData, Audit audit, Map<String, String> headers, String customerId) {
     this.messages = messages;
     this.render = render;
     this.keyboardState = keyboardState;
@@ -134,6 +146,7 @@ public class MorfeusWebhookResponse implements Serializable {
     this.extraData = extraData;
     this.audit = audit;
     this.headers = headers;
+    this.customerId = customerId;
   }
 
   public MorfeusWebhookResponse() {
@@ -143,7 +156,7 @@ public class MorfeusWebhookResponse implements Serializable {
   public String toString() {
     return new ToStringBuilder(this).append("messages", messages).append("render", render).append("keyboardState", keyboardState)
         .append("status", status).append("expectedEntities", expectedEntities).append("extraData", extraData).append("audit", audit)
-        .toString();
+        .append("customerId", customerId).toString();
   }
 
 }
