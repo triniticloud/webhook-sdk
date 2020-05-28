@@ -181,12 +181,12 @@
                 <snapshotRepository>
                     <id>snapshots</id>
                     <name>artifactory-snapshots</name>
-                    <url>http://artifactory.active.ai/artifactory/libs-snapshot-local</url>
+                    <url>https://artifactory.active.ai/artifactory/libs-snapshot-local</url>
                 </snapshotRepository>
                 <repository>
                     <id>central</id>
                     <name>artifactory-releases</name>
-                    <url>http://artifactory.active.ai/artifactory/libs-release-local</url>
+                    <url>https://artifactory.active.ai/artifactory/libs-release-local</url>
                 </repository>
             </distributionManagement>
         </profile>
