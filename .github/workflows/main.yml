@@ -23,6 +23,7 @@ jobs:
        mkdir -p ~/.gnupg/
        printf "$GPG_PRIVATE_KEY" | base64 --decode > ~/.gnupg/private.key
        gpg --batch --import ~/.gnupg/private.key
+       export GPG_TTY=$(tty)
       env:
        GPG_PRIVATE_KEY: ${{ secrets.GPG_PRIVATE_KEY }}      
 
