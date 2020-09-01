@@ -56,6 +56,9 @@ public abstract class AbstractMessage implements Serializable {
   @JsonProperty("customTemplateName")
   private String customTemplateName;
 
+  @JsonProperty("max_digits")
+  private Integer maxDigits;
+
   @JsonProperty("type")
   public String getType() {
     return type;
@@ -87,10 +90,24 @@ public abstract class AbstractMessage implements Serializable {
   }
 
   @JsonProperty("customTemplateName")
-  public String getCustomTemplateName() { return customTemplateName; }
+  public String getCustomTemplateName() {
+    return customTemplateName;
+  }
 
   @JsonProperty("customTemplateName")
-  public void setCustomTemplateName(String customTemplateName) { this.customTemplateName = customTemplateName; }
+  public void setCustomTemplateName(String customTemplateName) {
+    this.customTemplateName = customTemplateName;
+  }
+
+  @JsonProperty("max_digits")
+  public Integer getMaxDigits() {
+    return maxDigits;
+  }
+
+  @JsonProperty("max_digits")
+  public void setMaxDigits(Integer maxDigits) {
+    this.maxDigits = maxDigits;
+  }
 
   public abstract Object getContent();
 }

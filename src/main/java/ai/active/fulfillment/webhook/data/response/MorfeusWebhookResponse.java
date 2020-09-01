@@ -33,6 +33,8 @@ public class MorfeusWebhookResponse implements Serializable {
   private String render;
   @JsonProperty("keyboard_state")
   private String keyboardState;
+  @JsonProperty("max_digits")
+  private Integer maxDigits;
   @JsonProperty("status")
   private Status status;
   @JsonProperty("expected_entities")
@@ -74,6 +76,16 @@ public class MorfeusWebhookResponse implements Serializable {
   @JsonProperty("keyboard_state")
   public void setKeyboardState(String keyboardState) {
     this.keyboardState = keyboardState;
+  }
+
+  @JsonProperty("max_digits")
+  public Integer getMaxDigits() {
+    return maxDigits;
+  }
+
+  @JsonProperty("max_digits")
+  public void setMaxDigits(Integer maxDigits) {
+    this.maxDigits = maxDigits;
   }
 
   @JsonProperty("status")
