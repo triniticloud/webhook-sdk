@@ -43,6 +43,17 @@ public class Content implements Serializable {
   @JsonProperty("markup")
   private String markup = null;
 
+  @JsonProperty("header")
+  private boolean header;
+
+  public boolean isHeader() {
+    return header;
+  }
+
+  public void setHeader(boolean header) {
+    this.header = header;
+  }
+
   @JsonProperty("image")
   public String getImage() {
     return this.image;
