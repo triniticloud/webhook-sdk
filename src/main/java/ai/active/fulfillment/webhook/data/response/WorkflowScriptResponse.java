@@ -22,7 +22,7 @@ import java.util.Map;
 /**
  * @author Pranay Kh.
  */
-public class WorkflowScriptResponse extends MorfeusWebhookResponse {
+public class WorkflowScriptResponse extends WebhookResponse {
 
   private static final long serialVersionUID = -2349927267160877254L;
 
