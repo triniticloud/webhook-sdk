@@ -59,6 +59,9 @@ public abstract class AbstractMessage implements Serializable {
   @JsonProperty("max_digits")
   private Integer maxDigits;
 
+  @JsonProperty("testData")
+  private List<Object> testData;
+
   @JsonProperty("type")
   public String getType() {
     return type;
@@ -107,6 +110,14 @@ public abstract class AbstractMessage implements Serializable {
   @JsonProperty("max_digits")
   public void setMaxDigits(Integer maxDigits) {
     this.maxDigits = maxDigits;
+  }
+
+  public List<Object> getTestData() {
+    return testData;
+  }
+
+  public void setTestData(List<Object> testData) {
+    this.testData = testData;
   }
 
   public abstract Object getContent();
