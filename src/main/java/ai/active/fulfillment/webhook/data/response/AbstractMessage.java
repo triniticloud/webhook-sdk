@@ -34,6 +34,7 @@ import java.util.List;
     @JsonSubTypes.Type(value = ButtonMessage.class, name = ButtonMessage.TYPE),
     @JsonSubTypes.Type(value = CarouselMessage.class, name = CarouselMessage.TYPE),
     @JsonSubTypes.Type(value = ImageMessage.class, name = ImageMessage.TYPE),
+    @JsonSubTypes.Type(value = ImageMessage.class, name = FileMessage.TYPE),
     @JsonSubTypes.Type(value = VideoMessage.class, name = VideoMessage.TYPE),
     @JsonSubTypes.Type(value = CustomMessage.class, name = CustomMessage.TYPE),
     @JsonSubTypes.Type(value = MarkupMessage.class, name = MarkupMessage.TYPE),
