@@ -21,7 +21,8 @@ import java.util.Map;
 
 public enum MessageType {
   TEXT(TextMessage.TYPE), LIST(ListMessage.TYPE), BUTTON(ButtonMessage.TYPE), CAROUSEL(CarouselMessage.TYPE), IMAGE(
-      ImageMessage.TYPE), VIDEO(VideoMessage.TYPE), CUSTOM(CustomMessage.TYPE), MARKUP(MarkupMessage.TYPE), DYNAMIC(DynamicMessage.TYPE);
+      ImageMessage.TYPE), VIDEO(VideoMessage.TYPE), CUSTOM(CustomMessage.TYPE), MARKUP(MarkupMessage.TYPE), DYNAMIC(DynamicMessage.TYPE),
+  FILE(FileMessage.TYPE);
 
   private static final Map<String, MessageType> CONSTANTS = new HashMap<>();
 
