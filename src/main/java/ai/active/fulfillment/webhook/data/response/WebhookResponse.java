@@ -39,6 +39,9 @@ public class WebhookResponse extends MorfeusWebhookResponse {
 
   @JsonProperty("errorDescription")
   private String errorDescription;
+  
+  @JsonProperty("serviceName")
+  private String serviceName;
 
   public String getTemplateCode() {
     return templateCode;
@@ -120,6 +123,13 @@ public class WebhookResponse extends MorfeusWebhookResponse {
     this.errorDescription = errorDescription;
   }
 
+  public String getServiceName() {
+    return serviceName;
+  }
+
+  public void setServiceName(String serviceName) {
+    this.serviceName = serviceName;
+  }
 
   @Override public String toString() {
     return "WebhookResponse{" + "templateCode='" + templateCode + '\'' + ", payload='" + payload + '\'' + ", messageCode='" + messageCode
