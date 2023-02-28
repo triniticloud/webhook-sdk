@@ -27,6 +27,18 @@ public class WebhookResponse extends MorfeusWebhookResponse {
 
   @JsonProperty("serviceRequest")
   private ServiceRequest serviceRequest;
+  
+  @JsonProperty("errorCode")
+  private int errorCode;
+
+  @JsonProperty("apiRequest")
+  private String apiRequest;
+
+  @JsonProperty("apiResponse")
+  private String apiResponse;
+
+  @JsonProperty("errorDescription")
+  private String errorDescription;
 
   public String getTemplateCode() {
     return templateCode;
@@ -76,11 +88,44 @@ public class WebhookResponse extends MorfeusWebhookResponse {
     this.serviceRequest = serviceRequest;
   }
 
-  @Override
-  public String toString() {
+  public int getErrorCode() {
+    return errorCode;
+  }
+
+  public void setErrorCode(int errorCode) {
+    this.errorCode = errorCode;
+  }
+
+  public String getApiRequest() {
+    return apiRequest;
+  }
+
+  public void setApiRequest(String apiRequest) {
+    this.apiRequest = apiRequest;
+  }
+
+  public String getApiResponse() {
+    return apiResponse;
+  }
+
+  public void setApiResponse(String apiResponse) {
+    this.apiResponse = apiResponse;
+  }
+
+  public String getErrorDescription() {
+    return errorDescription;
+  }
+
+  public void setErrorDescription(String errorDescription) {
+    this.errorDescription = errorDescription;
+  }
+
+
+  @Override public String toString() {
     return "WebhookResponse{" + "templateCode='" + templateCode + '\'' + ", payload='" + payload + '\'' + ", messageCode='" + messageCode
         + '\'' + ", messageParams=" + Arrays.toString(messageParams) + ", transaction=" + transaction + ", serviceRequest=" + serviceRequest
-        + '}';
+        + ", errorCode=" + errorCode + ", apiRequest='" + apiRequest + '\'' + ", apiResponse='" + apiResponse + '\''
+        + ", errorDescription='" + errorDescription + '\'' + '}';
   }
   
 }
