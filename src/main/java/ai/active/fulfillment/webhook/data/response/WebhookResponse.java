@@ -3,7 +3,10 @@ package ai.active.fulfillment.webhook.data.response;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import ai.active.fulfillment.webhook.data.request.ServiceRequest;
 import ai.active.fulfillment.webhook.data.request.Transaction;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+
 import java.util.Arrays;
+import java.util.List;
 
 /**
  * @author rupamdebnath
@@ -28,17 +31,8 @@ public class WebhookResponse extends MorfeusWebhookResponse {
   @JsonProperty("serviceRequest")
   private ServiceRequest serviceRequest;
   
-  @JsonProperty("errorCode")
-  private int errorCode;
-
-  @JsonProperty("apiRequest")
-  private String apiRequest;
-
-  @JsonProperty("apiResponse")
-  private String apiResponse;
-
-  @JsonProperty("errorDescription")
-  private String errorDescription;
+  @JsonProperty("apiAudits")
+  private List<APIAudit> apiAuditList;
   
   @JsonProperty("serviceName")
   private String serviceName;
@@ -91,37 +85,6 @@ public class WebhookResponse extends MorfeusWebhookResponse {
     this.serviceRequest = serviceRequest;
   }
 
-  public int getErrorCode() {
-    return errorCode;
-  }
-
-  public void setErrorCode(int errorCode) {
-    this.errorCode = errorCode;
-  }
-
-  public String getApiRequest() {
-    return apiRequest;
-  }
-
-  public void setApiRequest(String apiRequest) {
-    this.apiRequest = apiRequest;
-  }
-
-  public String getApiResponse() {
-    return apiResponse;
-  }
-
-  public void setApiResponse(String apiResponse) {
-    this.apiResponse = apiResponse;
-  }
-
-  public String getErrorDescription() {
-    return errorDescription;
-  }
-
-  public void setErrorDescription(String errorDescription) {
-    this.errorDescription = errorDescription;
-  }
 
   public String getServiceName() {
     return serviceName;
@@ -131,11 +94,17 @@ public class WebhookResponse extends MorfeusWebhookResponse {
     this.serviceName = serviceName;
   }
 
-  @Override public String toString() {
-    return "WebhookResponse{" + "templateCode='" + templateCode + '\'' + ", payload='" + payload + '\'' + ", messageCode='" + messageCode
-        + '\'' + ", messageParams=" + Arrays.toString(messageParams) + ", transaction=" + transaction + ", serviceRequest=" + serviceRequest
-        + ", errorCode=" + errorCode + ", apiRequest='" + apiRequest + '\'' + ", apiResponse='" + apiResponse + '\''
-        + ", errorDescription='" + errorDescription + '\'' + '}';
+  public List<APIAudit> getApiAuditList() {
+    return apiAuditList;
   }
-  
+
+  public void setApiAuditList(List<APIAudit> apiAuditList) {
+    this.apiAuditList = apiAuditList;
+  }
+
+  @Override public String toString() {
+    return new ToStringBuilder(this).append("templateCode", templateCode).append("payload", payload).append("messageCode", messageCode)
+        .append("messageParams", messageParams).append("transaction", transaction).append("serviceRequest", serviceRequest)
+        .append("apiAuditList", apiAuditList).append("serviceName", serviceName).toString();
+  }
 }
