@@ -33,9 +33,6 @@ public class WebhookResponse extends MorfeusWebhookResponse {
 
   @JsonProperty("apiAudits")
   private List<APIAudit> apiAuditList;
-  
-  @JsonProperty("serviceName")
-  private String serviceName;
 
   public String getTemplateCode() {
     return templateCode;
@@ -85,14 +82,6 @@ public class WebhookResponse extends MorfeusWebhookResponse {
     this.serviceRequest = serviceRequest;
   }
 
-  public String getServiceName() {
-    return serviceName;
-  }
-
-  public void setServiceName(String serviceName) {
-    this.serviceName = serviceName;
-  }
-
   public List<APIAudit> getApiAuditList() {
     return apiAuditList;
   }
@@ -104,6 +93,6 @@ public class WebhookResponse extends MorfeusWebhookResponse {
   @Override public String toString() {
     return new ToStringBuilder(this).append("templateCode", templateCode).append("payload", payload).append("messageCode", messageCode)
         .append("messageParams", messageParams).append("transaction", transaction).append("serviceRequest", serviceRequest)
-        .append("apiAuditList", apiAuditList).append("serviceName", serviceName).toString();
+        .append("apiAuditList", apiAuditList).toString();
   }
 }
