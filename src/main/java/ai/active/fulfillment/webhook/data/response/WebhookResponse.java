@@ -30,7 +30,7 @@ public class WebhookResponse extends MorfeusWebhookResponse {
 
   @JsonProperty("serviceRequest")
   private ServiceRequest serviceRequest;
-  
+
   @JsonProperty("apiAudits")
   private List<APIAudit> apiAuditList;
   
@@ -84,7 +84,6 @@ public class WebhookResponse extends MorfeusWebhookResponse {
   public void setServiceRequest(ServiceRequest serviceRequest) {
     this.serviceRequest = serviceRequest;
   }
-
 
   public String getServiceName() {
     return serviceName;
