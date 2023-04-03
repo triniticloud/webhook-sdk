@@ -34,6 +34,12 @@ public class WebhookResponse extends MorfeusWebhookResponse {
   @JsonProperty("apiAudits")
   private List<APIAudit> apiAuditList;
 
+  @JsonProperty("serviceName")
+  private String serviceName;
+
+  @JsonProperty("useCaseName")
+  private String useCaseName;
+
   public String getTemplateCode() {
     return templateCode;
   }
@@ -90,9 +96,26 @@ public class WebhookResponse extends MorfeusWebhookResponse {
     this.apiAuditList = apiAuditList;
   }
 
+  public String getServiceName() {
+    return serviceName;
+  }
+
+  public void setServiceName(String serviceName) {
+    this.serviceName = serviceName;
+  }
+
+  public String getUseCaseName() {
+    return useCaseName;
+  }
+
+  public void setUseCaseName(String useCaseName) {
+    this.useCaseName = useCaseName;
+  }
+
   @Override public String toString() {
-    return new ToStringBuilder(this).append("templateCode", templateCode).append("payload", payload).append("messageCode", messageCode)
-        .append("messageParams", messageParams).append("transaction", transaction).append("serviceRequest", serviceRequest)
-        .append("apiAuditList", apiAuditList).toString();
+    return new org.apache.commons.lang3.builder.ToStringBuilder(this).append("templateCode", templateCode).append("payload", payload)
+        .append("messageCode", messageCode).append("messageParams", messageParams).append("transaction", transaction)
+        .append("serviceRequest", serviceRequest).append("apiAuditList", apiAuditList).append("serviceName", serviceName)
+        .append("useCaseName", useCaseName).toString();
   }
 }

@@ -14,7 +14,7 @@ public class APIAudit {
 
   private String errorDescription;
 
-  private String serviceName;
+  private String apiName;
 
   public int getResponseCode() {
     return responseCode;
@@ -55,18 +55,18 @@ public class APIAudit {
   public void setResponseTime(Long responseTime) {
     this.responseTime = responseTime;
   }
-
-  public String getServiceName() {
-    return serviceName;
+  
+  public String getApiName() {
+    return apiName;
   }
 
-  public void setServiceName(String serviceName) {
-    this.serviceName = serviceName;
+  public void setApiName(String apiName) {
+    this.apiName = apiName;
   }
 
   @Override public String toString() {
-    return new ToStringBuilder(this).append("responseTime", responseTime).append("responseCode", responseCode)
-        .append("apiRequest", apiRequest).append("apiResponse", apiResponse).append("errorDescription", errorDescription)
-        .append("serviceName", serviceName).toString();
+    return new org.apache.commons.lang3.builder.ToStringBuilder(this).append("responseTime", responseTime)
+        .append("responseCode", responseCode).append("apiRequest", apiRequest).append("apiResponse", apiResponse)
+        .append("errorDescription", errorDescription).append("apiName", apiName).toString();
   }
 }
