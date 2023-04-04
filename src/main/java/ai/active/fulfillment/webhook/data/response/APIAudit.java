@@ -12,7 +12,7 @@ public class APIAudit {
 
   private String apiResponse;
 
-  private String errorDescription;
+  private String status;
 
   private String apiName;
 
@@ -40,12 +40,12 @@ public class APIAudit {
     this.apiResponse = apiResponse;
   }
 
-  public String getErrorDescription() {
-    return errorDescription;
+  public String getStatus() {
+    return status;
   }
 
-  public void setErrorDescription(String errorDescription) {
-    this.errorDescription = errorDescription;
+  public void setStatus(String status) {
+    this.status = status;
   }
 
   public Long getResponseTime() {
@@ -67,6 +67,6 @@ public class APIAudit {
   @Override public String toString() {
     return new org.apache.commons.lang3.builder.ToStringBuilder(this).append("responseTime", responseTime)
         .append("responseCode", responseCode).append("apiRequest", apiRequest).append("apiResponse", apiResponse)
-        .append("errorDescription", errorDescription).append("apiName", apiName).toString();
+        .append("status", status).append("apiName", apiName).toString();
   }
 }
