@@ -46,6 +46,9 @@ public class Content implements Serializable {
   @JsonProperty("header")
   private boolean header;
 
+  @JsonProperty("sectionTitle")
+  private String sectionTitle= null;
+
   public boolean isHeader() {
     return header;
   }
@@ -122,5 +125,12 @@ public class Content implements Serializable {
   @JsonProperty("markup")
   public void setMarkup(String markup) {
     this.markup = markup;
+  }
+  public String getSectionTitle() {
+    return sectionTitle;
+  }
+
+  public void setSectionTitle(String sectionTitle) {
+    this.sectionTitle = sectionTitle;
   }
 }
