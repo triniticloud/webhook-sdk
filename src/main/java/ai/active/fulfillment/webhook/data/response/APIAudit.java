@@ -15,6 +15,8 @@ public class APIAudit {
   private String status;
 
   private String apiName;
+  
+  private String responseCategory;
 
   public int getResponseCode() {
     return responseCode;
@@ -64,9 +66,17 @@ public class APIAudit {
     this.apiName = apiName;
   }
 
+  public String getResponseCategory() {
+    return responseCategory;
+  }
+
+  public void setResponseCategory(String responseCategory) {
+    this.responseCategory = responseCategory;
+  }
+
   @Override public String toString() {
-    return new org.apache.commons.lang3.builder.ToStringBuilder(this).append("responseTime", responseTime)
-        .append("responseCode", responseCode).append("apiRequest", apiRequest).append("apiResponse", apiResponse)
-        .append("status", status).append("apiName", apiName).toString();
+    return new ToStringBuilder(this).append("responseTime", responseTime).append("responseCode", responseCode)
+        .append("apiRequest", apiRequest).append("apiResponse", apiResponse).append("status", status).append("apiName", apiName)
+        .append("responseCategory", responseCategory).toString();
   }
 }
